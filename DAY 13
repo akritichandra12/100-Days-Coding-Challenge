@@ -1,0 +1,19 @@
+class Solution {
+    public int percentageLetter(String s, char letter) {
+        int l=s.length();
+        int i;
+        int k=0;
+        char b;
+        for(i=0;i<l;i++)
+        {
+            b=s.charAt(i);
+            if(b==letter)
+            k++;
+            else 
+            continue;
+        }
+        int tp=k*100/l;
+        return tp;
+        
+    }
+}
