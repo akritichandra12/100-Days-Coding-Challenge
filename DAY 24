@@ -1,0 +1,25 @@
+class Solution {
+    public int countDigitOne(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        int k=0;
+        long f=1;
+        long a,b,c=0;
+         while (n/f!=0) 
+        {
+            c=(n/f)%10;  
+            b=n/(f*10);  
+            a=n-(n/f)*f;  
+            if (c>1) 
+            k+=(b+1)*f;
+            else if
+            (c==1) 
+             k+= b*f+a+1;
+            else 
+            k+= b*f;
+            f*= 10;
+        }
+        return k;
+    }
+}
