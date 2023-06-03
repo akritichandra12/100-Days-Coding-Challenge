@@ -1,0 +1,24 @@
+lass Solution {
+    public int superPow(int a, int[] b) {
+        int i;
+        long n;
+        long s=0;
+        int l=b.length;
+        for(i=0;i<l;i++)
+        {
+            s=s*10+b[i];
+            s=s%1140;
+        }
+        int ans=1;
+        a=a%1337;
+        s=s%1140;
+        while(s>0)
+        {
+            if(s%2==1)
+                ans=((ans%1337)*(a%1337))%1337;
+            a=((a%1337)*(a%1337))%1337;
+            s/=2;
+        }
+        return ans%1337;
+    }
+}
