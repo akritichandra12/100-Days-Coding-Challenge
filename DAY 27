@@ -1,0 +1,18 @@
+class Solution
+ {
+    public int divide(int dividend, int divisor) 
+    {
+        double ans=dividend/divisor;
+        if(dividend<0&&divisor<0)
+        {
+            ans=Math.abs(ans);
+            int s=(int)ans;
+            return s;
+        }
+        else
+        {
+        int r=(int)ans;
+        return r;
+        }
+   }
+}
