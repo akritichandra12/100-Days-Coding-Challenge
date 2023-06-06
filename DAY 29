@@ -1,0 +1,17 @@
+class Solution {
+    public boolean areNumbersAscending(String s)
+     {
+    int k=0;
+    for(String str: s.split(" "))
+    {
+      if(Character.isDigit(str.charAt(0)))
+        {
+            int n=Integer.parseInt(str);
+            if(n<=k)
+            return false;
+            k=n;
+        }
+    }
+    return true;
+} 
+}
