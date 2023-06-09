@@ -1,0 +1,24 @@
+class Solution 
+{
+    public char nextGreatestLetter(char[] letters, char target) 
+    {
+        int t=(int)target;
+        int i;int min=200;int k=0;
+        for(i=0;i<letters.length;i++)
+        {
+            char b=letters[i];
+            if((int)b>t)
+            {
+                if(min>(int)b)
+                {
+                k=1;
+                min=b;
+                }
+            }
+        }
+        if(k==1)
+         return (char)min;
+         else
+         return letters[0];
+        }
+}
