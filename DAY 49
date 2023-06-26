@@ -1,0 +1,19 @@
+class Solution 
+{
+   public int romanToInt(String s) 
+   {
+   String str="MDCLXVI";
+   int[] arr={1000,500,100,50,10,5,1};
+   int k1=0;
+   int n=0;
+   for(int i=s.length()-1;i>=0;i--)
+   {
+        int k2= arr[str.indexOf(s.charAt(i))];
+        if(k1<=k2) 
+        n=n+k2;
+        else n=n-k2;
+        k1=k2;
+    }
+    return n;
+    }
+}
