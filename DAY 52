@@ -1,0 +1,23 @@
+class Solution 
+{
+    public String addBinary(String a, String b) 
+    {
+        StringBuilder str = new StringBuilder();
+        int i =a.length()-1,j=b.length()-1,k=0;
+        while(i>=0||j>=0)
+         {
+             int s=k;
+            if(j>=0) 
+            s+=b.charAt(j--)-'0';
+            if(i>=0) 
+            s+=a.charAt(i--)-'0';
+            str.append(s%2);
+            k=s/2;
+        }
+        if(k!=0) 
+        str.append(k);
+        return str.reverse().toString();
+    }
+}
+
+        
