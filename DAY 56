@@ -1,0 +1,51 @@
+class Solution {
+    public boolean buddyStrings(String s, String goal) {
+       Set<Character> st=new HashSet<Character>();
+       if(s.equals(goal))
+       {
+       for(int i=0;i<s.length();i++)
+       {
+           st.add(s.charAt(i));
+       }
+       if(st.size()<goal.length()) 
+       return true;
+       else 
+       return false;
+       }
+       else
+       {
+           int i=0,f=0;
+           while(i<s.length()&&s.charAt(i)==goal.charAt(i))
+           {
+               i++;
+           }
+           f=i;
+           i++;
+           while(i<s.length()&&s.charAt(i)==goal.charAt(i))
+           {
+               i++;
+           }
+           String str="";
+           if(i>=s.length())
+            return false;
+           for(int j=0;j<s.length();j++)
+           {
+               if(j==i)
+               {
+                   str=str+s.charAt(f);
+               }
+
+               else if(j==f)
+               {
+                   str=str+s.charAt(i);
+               }
+               else 
+               str=str+s.charAt(j);
+           }
+           if(str.equals(goal))
+           return true;
+           else 
+           return false;
+       }
+    }
+}
