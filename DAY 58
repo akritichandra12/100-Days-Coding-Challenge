@@ -1,0 +1,13 @@
+class Solution 
+{
+    public int titleToNumber(String columnTitle) 
+    {
+        int l=columnTitle.length()-1;
+        int s=0;
+        for(int i=0;i<=l;i++)
+        {
+            s+=Math.pow(26,l-i)*(columnTitle.charAt(i)-64);;
+        }
+        return s;
+    }
+}
