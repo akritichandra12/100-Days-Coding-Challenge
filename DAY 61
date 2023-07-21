@@ -1,0 +1,29 @@
+public class Solution {
+    public String countAndSay(int n) {
+        String s = "1";
+        for(int i = 1; i < n; i++){
+            s=count(s);
+        }
+        return s;
+    }
+    public String count(String s){
+        StringBuilder sb = new StringBuilder();
+        char b=s.charAt(0);
+        int k=1;
+        for(int i =1;i<s.length();i++)
+        {
+            if(s.charAt(i)==b)
+            k++;
+            else
+            {
+                sb.append(k);
+                sb.append(b);
+                b=s.charAt(i);
+                k=1;
+            }
+        }
+        sb.append(k);
+        sb.append(b);
+        return sb.toString();
+    }
+}
