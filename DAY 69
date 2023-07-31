@@ -1,0 +1,38 @@
+lass Solution 
+{
+    public int maxProduct(String[] words) 
+    {
+        int[][] a = new int[words.length][26];
+        for (int i = 0;i<words.length;i++) 
+        {
+            for (int j = 0; j < words[i].length(); j++)
+            {
+                a[i][words[i].charAt(j)-'a']++;
+            }
+        }
+        int max = 0;
+        for (int i =0;i<a.length-1;i++) 
+        {
+            int[] arr= a[i];
+            for (int j = i + 1; j<a.length; j++) 
+            {
+                int[] arr2 = a[j];
+                boolean f = true;
+                for (int k=0; k<arr.length;k++) 
+                {
+                    if (arr[k]>0&&arr2[k]>0) 
+                    {
+                        f=false;
+                        break;
+                    }
+                }
+                if (f==true) 
+                {
+                    int p=words[i].length()*words[j].length();
+                    if (max<p) max=p;
+                }
+            }
+        }
+        return max;
+    }
+}
